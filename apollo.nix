@@ -69,11 +69,6 @@ stdenv'.mkDerivation rec {
   ui = buildNpmPackage {
     inherit src version;
     pname = "sunshine-ui";
-   # npmDepsHash = "sha256-T1t/2MVgb9zi1tcpa6iFV0o1s/m1lUDCnzZgPa4wc6g="; # You'll need to generate this
-   # npmDepsHash = "sha256-sWCmx1dMEyRyuYeeuqAjHZLVnckskgQO4saFM64s4Y4=";
-   # npmDepsHash = "sha256-HBEAFkRBitDT09xSAEA/fgRQlSaLaAczutf0urQIfeM="; # This one is used when lib.fakehash is tested
-   # npmDepsHash = lib.fakeHash;
-   # npmDepsHash = "sha256-7b+8yijOZg8E25EVcVEvWCUyS5x7zX5zCevbAW5AOq8=";
     npmDepsHash = "sha256-7YwsQNbm0t/j1tEY4cxbW04+kDiw9bNwSeT8qX0hDEs=";
     makeCacheWritable = true; # Allow npm to write to the cache
    # npmFlags = [ "--legacy-peer-deps" "--no-offline" ]; # Resolve peer dependency conflicts
@@ -83,9 +78,6 @@ stdenv'.mkDerivation rec {
      '';
 
     installPhase = ''
-    #  mkdir -p $out/build
-    #  npm run build
-    #  cp -r dist/* $out/build/
       mkdir -p $out
       cp -r * $out/
 
@@ -212,13 +204,7 @@ stdenv'.mkDerivation rec {
   '';
 
   preBuild = ''
-    # copy webui where it can be picked up by build
-    #   mkdir -p ../sunshine/assets/web
-    #cp -r ${ui}/* ../sunshine/assets/web
-    #cp -r ${ui}/* ../sunshine/assets/web
   cp -r ${ui}/build ../     # this is original line in sunshine package
-  #  mkdir -p build/assets/web
-  #cp -r ${ui}/build/* build/assets/web
   '';
 
   buildFlags = [
