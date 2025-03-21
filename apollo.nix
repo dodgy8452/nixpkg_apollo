@@ -194,7 +194,7 @@ stdenv'.mkDerivation rec {
     substituteInPlace packaging/linux/sunshine.desktop \
       --subst-var-by PROJECT_NAME 'Apollo' \
       --subst-var-by PROJECT_DESCRIPTION 'Self-hosted game stream host for Moonlight' \
-      --subst-var-by SUNSHINE_DESKTOP_ICON 'sunshine' \
+      --subst-var-by SUNSHINE_DESKTOP_ICON 'apollo' \
       --subst-var-by CMAKE_INSTALL_FULL_DATAROOTDIR "$out/share" \
       --replace-fail '/usr/bin/env systemctl start --u sunshine' 'sunshine'
 
