@@ -1,5 +1,7 @@
 # nixpkg_apollo
 
+https://github.com/ClassicOldSong/Apollo
+
 version = Apollo-0.3.1-hotfox.1
 
 Package for installing Apollo gamestreaming client 
