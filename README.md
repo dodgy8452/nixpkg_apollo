@@ -4,7 +4,7 @@ https://github.com/ClassicOldSong/Apollo
 
 version = Apollo-0.3.1-hotfox.1
 
-Package for installing Apollo gamestreaming client 
+NIXOS package for installing Apollo gamestreaming client 
 
 I have used https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/su/sunshine/package.nix as a template to get this working.
 
